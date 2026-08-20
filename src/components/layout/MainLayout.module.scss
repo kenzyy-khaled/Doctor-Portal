@@ -1,0 +1,38 @@
+.mobileBar {
+  background: #fff;
+  border-bottom: 1px solid #eef0f4;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.menuButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  border: 1px solid #d0d5dd;
+  background: #fff;
+  color: #344054;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background: #f9fafb;
+  }
+}
+
+.mobileBrand {
+  font-size: 15px;
+  font-weight: 700;
+  color: #101828;
+}
+
+
+@media (min-width: 1024px) {
+  .desktopContent {
+    min-height: 100vh;
+  }
+}

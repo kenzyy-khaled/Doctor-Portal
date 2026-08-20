@@ -1,0 +1,106 @@
+@use "../../styles/variables" as vars;
+
+.sidebar {
+  width: vars.$sidebar-width;
+  background: vars.$sidebar-bg;
+  color: vars.$sidebar-text;
+  min-height: 100vh;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  transition: transform 0.25s ease, width 0.25s ease;
+  box-shadow: 4px 0 24px -8px rgba(16, 24, 40, 0.25);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandMark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: vars.$sidebar-accent;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.navSection {
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.link {
+  min-height: 44px;
+  color: vars.$sidebar-text;
+  font-weight: 500;
+
+  &:hover {
+    color: vars.$sidebar-text-active;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  &.active {
+    color: vars.$sidebar-text-active;
+    background: vars.$sidebar-accent;
+    box-shadow: 0 4px 10px -2px rgba(37, 99, 235, 0.45);
+  }
+}
+
+.linkLabel {
+  display: block;
+  width: 100%;
+}
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logoutBtn {
+  color: #d1d5db;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+  }
+}
+
+// ---- Mobile off-canvas drawer ----
+.scrim {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .sidebar {
+    position: fixed;
+    inset-block: 0;
+    left: 0;
+    z-index: 60;
+    transform: translateX(-100%);
+  }
+
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+
+  .scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(16, 24, 40, 0.5);
+    z-index: 55;
+  }
+}

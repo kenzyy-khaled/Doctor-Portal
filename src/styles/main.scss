@@ -1,0 +1,22 @@
+@use "variables" as vars;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  color: #111827;
+  background: #f9fafb;
+}
+
+:root {
+  --sidebar-width: #{vars.$sidebar-width};
+}
